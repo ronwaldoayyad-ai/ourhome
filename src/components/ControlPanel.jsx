@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 function Toggle({ label, checked, onChange, disabled }) {
   return (
     <label className={`toggle ${disabled ? 'disabled' : ''}`}>
@@ -10,9 +12,35 @@ function Toggle({ label, checked, onChange, disabled }) {
 
 export default function ControlPanel({ state, set }) {
   const walk = state.mode === 'walk';
+  const [collapsed, setCollapsed] = useState(false);
+
+  // Collapsed: a compact pill so the panel stops covering the 3D view
+  if (collapsed) {
+    return (
+      <button
+        className="panel-fab"
+        onClick={() => setCollapsed(false)}
+        aria-label="Show explore controls"
+        aria-expanded="false"
+      >
+        🖱️ Controls
+      </button>
+    );
+  }
+
   return (
     <div className="panel">
-      <div className="panel-title">Explore the Bungalow</div>
+      <div className="panel-head">
+        <div className="panel-title">Explore the Bungalow</div>
+        <button
+          className="panel-min"
+          onClick={() => setCollapsed(true)}
+          aria-label="Minimize controls"
+          aria-expanded="true"
+        >
+          –
+        </button>
+      </div>
 
       <div className="mode-row">
         <button
