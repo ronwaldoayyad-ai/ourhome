@@ -135,15 +135,15 @@ function WalkRig() {
       camera.position.add(step);
     }
     camera.position.y = 1.6;
-    camera.position.x = THREE.MathUtils.clamp(camera.position.x, -6.3, 6.3);
-    camera.position.z = THREE.MathUtils.clamp(camera.position.z, -8.6, 5.4);
+    camera.position.x = THREE.MathUtils.clamp(camera.position.x, -6.5, 6.5);
+    camera.position.z = THREE.MathUtils.clamp(camera.position.z, -5.3, 4.3);
   });
 
   return null;
 }
 
 function Hotspots({ onSelect }) {
-  return ROOMS.map((room) => (
+  return ROOMS.filter((room) => room.hotspot !== false).map((room) => (
     <Html
       key={room.id}
       position={[room.center[0], 1.7, room.center[1]]}

@@ -70,11 +70,12 @@ export default function App() {
           <h2>The Design</h2>
           <p className="lead">
             <strong>Casa Verde</strong> is a single-storey modern bungalow raised on an elevated
-            foundation, built around one generous open great room. Three roomy bedrooms line the
-            full rear wall, while the entire front and center form a wide open-plan living–dining
-            space wrapped in floor-to-ceiling glazing. A covered outdoor kitchen sits front-left
-            next to the dining, the veranda spans the front-right by the living room, and a
-            bathroom + laundry wing tucks into the rear-west beside a side carport and driveway.
+            foundation, organised on a clean three-by-three room grid. The kitchen, dining, and
+            living rooms run straight up the center as one social spine; three bedrooms occupy the
+            east side and the far corners, with the master and a bath-and-laundry wing on the west.
+            A covered carport tucks into the front-left, and the home opens out through a front
+            entry porch, a side porch off the family room, a back porch behind the kitchen, and a
+            landscaped garden by the front bedroom.
           </p>
           <div className="specs">
             {SPECS.map((s) => (

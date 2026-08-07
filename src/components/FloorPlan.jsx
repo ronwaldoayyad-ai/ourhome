@@ -3,8 +3,8 @@ import { ROOMS } from '../data';
 // A simple top-down 2D schematic generated from the same room data used by the
 // 3D model. World X→svg x, world Z→svg y. Scale meters→px.
 const SCALE = 26;
-const OX = 310; // origin x (world x=0) — shifted right to fit the west-side lanai
-const OZ = 240; // origin y (world z=0)
+const OX = 272; // origin x (world x=0)
+const OZ = 250; // origin y (world z=0)
 
 export default function FloorPlan() {
   const toX = (x) => OX + x * SCALE;
@@ -42,9 +42,9 @@ export default function FloorPlan() {
       })}
 
       {/* front / rear labels */}
-      <text x="330" y="465" textAnchor="middle" className="fp-dir">FRONT (porch)</text>
-      <text x="330" y="24" textAnchor="middle" className="fp-dir">REAR (garden)</text>
-      <text x="70" y="24" textAnchor="middle" className="fp-dir">WEST (carport)</text>
+      <text x="290" y="465" textAnchor="middle" className="fp-dir">FRONT (porch &amp; garden)</text>
+      <text x="290" y="24" textAnchor="middle" className="fp-dir">REAR (yards)</text>
+      <text x="70" y="250" textAnchor="middle" className="fp-dir">WEST</text>
     </svg>
   );
 }
